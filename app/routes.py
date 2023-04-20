@@ -39,9 +39,9 @@ books = [
     Book(3, "Fictional Book Title", "A fantasy novel set in an imaginary world.")
 ]
 
-books_bp = Blueprint("hello_world", __name__)
+books_bp = Blueprint("books", __name__, url_prefix="/books")
 
-@books_bp.route("", methods=["GET"], url_prefix="/books")
+@books_bp.route("", methods=["GET"])
 def handle_books():
     book_response = []
     for book in books:
