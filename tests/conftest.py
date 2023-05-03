@@ -4,7 +4,6 @@ from app import create_app
 from flask.signals import request_finished
 from app.models.book import Book
 
-
 @pytest.fixture
 def app():
     app = create_app({"TESTING": True})
@@ -16,7 +15,7 @@ def app():
     with app.app_context():
         db.create_all()
         yield app
-    
+
     with app.app_context():
         db.drop_all()
 
